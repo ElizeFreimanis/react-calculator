@@ -56,6 +56,8 @@ function App() {
         setCalculated(true);
     };
 
+    const fontSize = window.innerWidth >= 1025 ? '3vw' : '9vw';
+
     return (
         <div className='App'>
             <div className='calculator'>
@@ -63,7 +65,9 @@ function App() {
                     <span className='calculation'>{calculation}</span>
                     <span
                         className='result'
-                        style={{ fontSize: result.length > 9 ? '9vw' : false }}
+                        style={{
+                            fontSize: result.length > 9 ? fontSize : false,
+                        }}
                     >
                         {result || '0'}
                     </span>
